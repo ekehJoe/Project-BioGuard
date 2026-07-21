@@ -1,4 +1,4 @@
-
+css = """
 /* ======================================================
    Project BioGuard
    FMD Reporting Wizard
@@ -166,3 +166,4 @@ textarea:focus{
 }
 
 }
+"""

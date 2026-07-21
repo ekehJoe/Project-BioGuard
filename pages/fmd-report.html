@@ -1,53 +1,598 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-            <title>Project BioGuard</title>
-            
-                <link rel="stylesheet" href="css/style.css">
-                
-                </head>
-                
-                <body>
-                
-                    <div class="container">
-                    
-                            <img
-                                        src="assets/bioguard-logo-v2.png"
-                                                    alt="Project BioGuard Logo"
-                                                                class="logo">
-                                                                
-                                                                        <h1>Project BioGuard</h1>
-                                                                        
-                                                                                <p class="subtitle">
-                                                                                
-                                                                                            Enterprise Livestock Biosecurity Decision Support System
-                                                                                            
-                                                                                                    </p>
-                                                                                                    
-                                                                                                            <button id="launchButton">
-                                                                                                            
-                                                                                                                        🚀 Launch BioGuard
-                                                                                                                        
-                                                                                                                                </button>
-                                                                                                                                
-                                                                                                                                    </div>
-                                                                                                                                    
-                                                                                                                                        <script src="js/script.js"></script>
-                                                                                                                                        
-                                                                                                                                        </body>
-                                                                                                                                        
-                                                                                                                                        </html>                                                </button>
+<meta charset="UTF-8">
 
-                                                                                                                                                                    </div>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-                                                                                                                                                                        <script src="script.js"></script>
+<title>
+Project BioGuard
+FMD Case Reporting
+</title>
 
-                                                                                                                                                                        </body>
+<link rel="stylesheet"
+      href="../css/fmd-report.css">
 
-                                                                                                                                                                        </html>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="page-header">
+
+<img src="../assets/bioguard-logo-v2.png"
+     class="logo"
+     alt="BioGuard Logo">
+
+<div>
+
+<h1>Project BioGuard</h1>
+
+<h2>
+Foot-and-Mouth Disease
+(FMD)
+Case Reporting
+</h2>
+
+<p>
+Enterprise Livestock
+Biosecurity Decision
+Support System
+</p>
+
+</div>
+
+</header>
+
+<!-- ==========================
+     STEP 1
+========================== -->
+
+<section class="form-step active"
+         id="step1">
+
+<h3>
+Step 1 — Reporter Information
+</h3>
+
+<div class="form-group">
+
+<label for="vetId">
+
+Vet ID
+
+</label>
+
+<input
+type="text"
+id="vetId"
+placeholder="001">
+
+</div>
+
+<div class="form-group">
+
+<label for="reportDate">
+
+Report Date
+
+</label>
+
+<input
+type="date"
+id="reportDate">
+
+</div>
+
+<div class="form-group">
+
+<label for="reportTime">
+
+Report Time
+
+</label>
+
+<input
+type="time"
+id="reportTime">
+
+</div>
+
+</section>
+
+<!-- ==========================
+     STEP 2
+========================== -->
+
+<section class="form-step"
+         id="step2">
+
+<h3>
+
+Step 2 — Farm Information
+
+</h3>
+
+<div class="form-group">
+
+<label>
+
+Farm Name
+
+</label>
+
+<input
+type="text"
+id="farmName"
+placeholder="Enter farm name">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Farm Owner
+
+</label>
+
+<input
+type="text"
+id="farmOwner"
+placeholder="Enter owner's name">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+State
+
+</label>
+
+<select id="state">
+
+<option value="">
+Select State
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+LGA
+
+</label>
+
+<select id="lga">
+
+<option value="">
+Select State First
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Community / Village
+
+</label>
+
+<input
+type="text"
+id="community"
+placeholder="Community or Village">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+GPS Latitude (Optional)
+
+</label>
+
+<input
+type="text"
+id="gpsLatitude"
+placeholder="Optional">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+GPS Longitude (Optional)
+
+</label>
+
+<input
+type="text"
+id="gpsLongitude"
+placeholder="Optional">
+
+</div>
+
+</section>
+
+<!-- ==========================
+     STEP 3
+========================== -->
+
+<section class="form-step"
+         id="step3">
+
+<h3>
+
+Step 3 — Animal Information
+
+</h3>
+
+<div class="form-group">
+
+<label>
+
+Species
+
+</label>
+
+<select id="species">
+
+<option value="">Select Species</option>
+
+<option>Cattle</option>
+<option>Goat</option>
+<option>Sheep</option>
+<option>Pig</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Breed
+
+</label>
+
+<select id="breed">
+
+<option value="">Select Breed</option>
+
+<option>White Fulani</option>
+<option>Red Bororo</option>
+<option>Sokoto Gudali</option>
+<option>Muturu</option>
+<option>Crossbreed</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Age Group
+
+</label>
+
+<select id="ageGroup">
+
+<option value="">Select Age Group</option>
+
+<option>Neonate</option>
+<option>Young</option>
+<option>Adult</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Animals At Risk
+
+</label>
+
+<input
+type="number"
+id="animalsAtRisk"
+min="0">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Animals Sick
+
+</label>
+
+<input
+type="number"
+id="animalsSick"
+min="0">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Animals Dead
+
+</label>
+
+<input
+type="number"
+id="animalsDead"
+min="0">
+
+</div>
+
+</section>
+
+<!-- ==========================
+     STEP 4
+========================== -->
+
+<section class="form-step"
+         id="step4">
+
+<h3>
+
+Step 4 — Clinical Signs
+
+</h3>
+
+<div class="checkbox-group">
+
+<label><input type="checkbox" id="fever"> Fever</label>
+
+<label><input type="checkbox" id="salivation"> Excessive Salivation</label>
+
+<label><input type="checkbox" id="mouthLesions"> Mouth Lesions</label>
+
+<label><input type="checkbox" id="footLesions"> Foot Lesions</label>
+
+<label><input type="checkbox" id="teatLesions"> Teat Lesions</label>
+
+<label><input type="checkbox" id="lameness"> Lameness</label>
+
+<label><input type="checkbox" id="lossAppetite"> Loss of Appetite</label>
+
+<label><input type="checkbox" id="reducedMilk"> Reduced Milk Production</label>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Mouth Lesion Severity
+
+</label>
+
+<select id="mouthSeverity">
+
+<option value="">Select Severity</option>
+
+<option>Mild</option>
+
+<option>Moderate</option>
+
+<option>Severe</option>
+
+</select>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     STEP 5
+========================== -->
+
+<section class="form-step"
+         id="step5">
+
+<h3>
+
+Step 5 — Epidemiology
+
+</h3>
+
+<div class="form-group">
+
+<label>
+
+Recent Animal Movement?
+
+</label>
+
+<select id="animalMovement">
+
+<option value="">Select</option>
+
+<option>Yes</option>
+
+<option>No</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Contact With Other Herds?
+
+</label>
+
+<select id="contactHerds">
+
+<option value="">Select</option>
+
+<option>Yes</option>
+
+<option>No</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+New Animals Introduced Recently?
+
+</label>
+
+<select id="newAnimals">
+
+<option value="">Select</option>
+
+<option>Yes</option>
+
+<option>No</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Vaccinated Against FMD?
+
+</label>
+
+<select id="vaccinated">
+
+<option value="">Select</option>
+
+<option>Yes</option>
+
+<option>No</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Other Nearby Sick Animals?
+
+</label>
+
+<select id="nearbyCases">
+
+<option value="">Select</option>
+
+<option>Yes</option>
+
+<option>No</option>
+
+</select>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     STEP 6
+========================== -->
+
+<section class="form-step"
+         id="step6">
+
+<h3>
+
+Step 6 — Additional Context
+
+</h3>
+
+<div class="form-group">
+
+<label>
+
+Additional Context
+
+</label>
+
+<textarea
+id="additionalContext"
+rows="6"
+placeholder="Provide any additional information that may improve AI confidence and support decision-making."></textarea>
+
+</div>
+
+</section>
+
+<div class="navigation">
+
+<button
+type="button"
+id="previousBtn">
+
+Previous
+
+</button>
+
+<button
+type="button"
+id="nextBtn">
+
+Next
+
+</button>
+
+<button
+type="submit"
+id="submitBtn">
+
+Submit FMD Report
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+<script src="../data/nigeria-lgas.js"></script>
+
+<script src="../js/fmd-report.js"></script>
+
+</body>
+
+</html>
