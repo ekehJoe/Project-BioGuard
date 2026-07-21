@@ -13,7 +13,7 @@ from templates.epidemiology import epidemiology
 from templates.review import review
 from templates.footer import footer
 from styles.fmd_css import css
-
+from scripts.fmd_js import js
 # ===============================
 # BioGuard Builder
 # ===============================
@@ -30,6 +30,8 @@ pages_dir.mkdir(exist_ok=True)
 css_dir = Path("../css")
 css_dir.mkdir(exist_ok=True)
 
+js_dir = Path("../js")
+js_dir.mkdir(exist_ok=True)
 # Assemble the complete HTML document
 html = (
     header
@@ -52,6 +54,12 @@ css_file = css_dir / "fmd-report.css"
 
 # Write CSS
 css_file.write_text(css, encoding="utf-8")
+# Output JS file
+js_file = js_dir / "fmd-report.js"
+
+# Write JS
+js_file.write_text(js, encoding="utf-8")
+
 print()
 
 print("✅ HTML generated.")
@@ -61,6 +69,11 @@ print()
 
 print("✅ CSS generated.")
 print(f"🎨 {css_file.resolve()}")
+
+print()
+
+print("✅ JavaScript generated.")
+print(f"⚙️ {js_file.resolve()}")
 
 print()
 

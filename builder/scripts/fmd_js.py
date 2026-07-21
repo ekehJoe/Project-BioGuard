@@ -1,4 +1,4 @@
-
+js = """
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Project BioGuard FMD Wizard Loaded");
@@ -60,3 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
     showStep(current);
 
 });
+"""
