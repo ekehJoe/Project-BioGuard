@@ -138,13 +138,44 @@ if(current === 1){
     const farmName = document.getElementById("farmName");
     const farmOwner = document.getElementById("farmOwner");
     const state = document.getElementById("state");
+    const lga = document.getElementById("lga");
+    const community = document.getElementById("community");
+
+if(!community.value.trim()){
+
+    alert("Please enter the Community / Village.");
+
+    return;
+
+}
+if(!lga.value.trim()){
+
+    alert("Please select the LGA.");
+
+    return;
+
+}
     if(!farmName.value.trim()){
 
         alert("Please enter the Farm Name.");
         return;
 
     }
+// Step 3 Validation - Animal Information
 
+if(current === 2){
+
+    const species = document.getElementById("species");
+
+    if(!species.value.trim()){
+
+        alert("Please select the animal species.");
+
+        return;
+
+    }
+
+}
     if(!farmOwner.value.trim()){
 
         alert("Please enter the Farm Owner / Manager.");
