@@ -128,68 +128,171 @@ if(state && lga){
         if(!vetPattern.test(vetId.value.trim())){
 
             alert("Invalid Vet ID. Use format: VET-001");
-  return;
+
+            return;
 
         }
+
     }
-// Step 2 Validation - Farm Information
-if(current === 1){
 
-    const farmName = document.getElementById("farmName");
-    const farmOwner = document.getElementById("farmOwner");
-    const state = document.getElementById("state");
-    const lga = document.getElementById("lga");
-    const community = document.getElementById("community");
+    // Step 2 Validation - Farm Information
+    if(current === 1){
 
-if(!community.value.trim()){
+        const farmName = document.getElementById("farmName");
+        const farmOwner = document.getElementById("farmOwner");
+        const state = document.getElementById("state");
+        const lga = document.getElementById("lga");
+        const community = document.getElementById("community");
 
-    alert("Please enter the Community / Village.");
+        if(!farmName.value.trim()){
+
+            alert("Please enter the Farm Name.");
+
+            return;
+
+        }
+
+        if(!farmOwner.value.trim()){
+
+            alert("Please enter the Farm Owner / Manager.");
+
+            return;
+
+        }
+
+        if(!state.value){
+
+            alert("Please select the State.");
+
+            return;
+
+        }
+
+        if(!lga.value){
+
+            alert("Please select the LGA.");
+
+            return;
+
+        }
+
+        if(!community.value.trim()){
+
+            alert("Please enter the Community / Village.");
+
+            return;
+
+        }
+
+    }
+
+    // Step 3 Validation - Animal Information
+    if(current === 2){
+
+        const species = document.getElementById("species");
+
+        if(!species.value){
+
+            alert("Please select the animal species.");
+
+            return;
+
+        }
+const breed = document.getElementById("breed");
+
+if(!breed.value){
+
+    alert("Please select the breed.");
 
     return;
 
 }
-if(!lga.value.trim()){
 
-    alert("Please select the LGA.");
+    const ageGroup = document.getElementById("ageGroup");
+
+    if(!ageGroup.value){
+
+        alert("Please select the age group.");
+
+        return;
+
+    }
+    const animalsAtRisk = document.getElementById("animalsAtRisk");
+
+    if(animalsAtRisk.value === ""){
+
+        alert("Please enter the number of Animals At Risk.");
+
+        return;
+
+    }
+
+    if(Number(animalsAtRisk.value) < 0){
+
+        alert("Animals At Risk cannot be negative.");
+
+        return;
+
+    }
+    const animalsSick = document.getElementById("animalsSick");
+
+    if(animalsSick.value === ""){
+
+        alert("Please enter the number of Animals Sick.");
+
+        return;
+
+    }
+
+    if(Number(animalsSick.value) < 0){
+
+        alert("Animals Sick cannot be negative.");
+
+        return;
+
+    }
+    const animalsDead = document.getElementById("animalsDead");
+
+    if(animalsDead.value === ""){
+
+        alert("Please enter the number of Animals Dead.");
+
+        return;
+
+    }
+
+if(Number(animalsDead.value) < 0){
+
+    alert("Animals Dead cannot be negative.");
 
     return;
 
 }
-    if(!farmName.value.trim()){
+// Data Integrity Check 1
+if(Number(animalsSick.value) > Number(animalsAtRisk.value)){
 
-        alert("Please enter the Farm Name.");
-        return;
-
-    }
-// Step 3 Validation - Animal Information
-
-if(current === 2){
-
-    const species = document.getElementById("species");
-
-    if(!species.value.trim()){
-
-        alert("Please select the animal species.");
-
-        return;
-
-    }
-
-}
-    if(!farmOwner.value.trim()){
-
-        alert("Please enter the Farm Owner / Manager.");
-        return;
-
-    }
-if(!state.value){
-
-    alert("Please select the State.");
+    alert("Animals Sick cannot exceed Animals At Risk.");
 
     return;
 
 }
+// Data Integrity Check 2
+if(Number(animalsDead.value) > Number(animalsSick.value)){
+
+    alert("Animals Dead cannot exceed Animals Sick.");
+
+    return;
+
 }
+// Data Integrity Check 3
+if(Number(animalsDead.value) > Number(animalsAtRisk.value)){
+
+    alert("Animals Dead cannot exceed Animals At Risk.");
+
+    return;
+
+}
+  }
 
     if(current<steps.length-1){
 
