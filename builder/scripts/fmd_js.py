@@ -333,6 +333,60 @@ if(current === 3){
 
     }
 }
+// Step 5 Validation - Epidemiology
+if(current === 4){
+
+    const animalMovement =
+        document.getElementById("animalMovement");
+
+    if(!animalMovement.value){
+
+        alert("Please indicate whether there has been recent animal movement.");
+
+        return;
+
+    }
+    const contactHerds =
+        document.getElementById("contactHerds");
+
+    if(!contactHerds.value){
+
+        alert("Please indicate whether there has been contact with other herds.");
+
+        return;
+
+    }
+    const newAnimals =
+        document.getElementById("newAnimals");
+
+    if(!newAnimals.value){
+
+        alert("Please indicate whether new animals were introduced recently.");
+
+        return;
+
+    }
+    const vaccinated =
+        document.getElementById("vaccinated");
+
+    if(!vaccinated.value){
+
+        alert("Please indicate whether the animals have been vaccinated against FMD.");
+
+        return;
+
+    }
+    const nearbyCases =
+        document.getElementById("nearbyCases");
+
+    if(!nearbyCases.value){
+
+        alert("Please indicate whether there are other nearby sick animals.");
+
+        return;
+
+    }
+}
     if(current<steps.length-1){
 
         current++;
