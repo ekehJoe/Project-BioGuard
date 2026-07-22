@@ -1,6 +1,22 @@
 js = """
 document.addEventListener("DOMContentLoaded", () => {
+// =========================
+// =========================
+// Auto-fill Date & Time
+// =========================
 
+const reportDate = document.getElementById("reportDate");
+const reportTime = document.getElementById("reportTime");
+
+const now = new Date();
+
+if(reportDate){
+    reportDate.value = now.toISOString().split("T")[0];
+}
+
+if(reportTime){
+    reportTime.value = now.toTimeString().slice(0,5);
+}
     console.log("Project BioGuard FMD Wizard Loaded");
 
     const steps = document.querySelectorAll(".form-step");
@@ -35,15 +51,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     nextBtn.addEventListener("click",()=>{
 
-        if(current<steps.length-1){
+    // Step 1 Validation - Vet ID
+    if(current === 0){
 
-            current++;
+        const vetId = document.getElementById("vetId");
 
-            showStep(current);
+        const vetPattern = /^VET-[0-9]{3}$/;
+
+        if(!vetPattern.test(vetId.value.trim())){
+
+            alert("Invalid Vet ID. Use format: VET-001");
+  return;
 
         }
 
-    });
+    }
+
+
+    if(current<steps.length-1){
+
+        current++;
+
+        showStep(current);
+
+    }
+
+});
 
     prevBtn.addEventListener("click",()=>{
 
@@ -61,3 +94,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 """
+

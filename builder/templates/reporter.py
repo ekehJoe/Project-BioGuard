@@ -21,7 +21,7 @@ Vet ID
 <input
 type="text"
 id="vetId"
-placeholder="001">
+placeholder="VET-001">
 
 </div>
 

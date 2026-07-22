@@ -79,7 +79,7 @@ label{
     font-weight:bold;
 }
 
-input,
+input:not([type="checkbox"]),
 select,
 textarea{
     width:100%;
@@ -99,18 +99,40 @@ textarea:focus{
 
 .checkbox-group{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:1fr;
     gap:12px;
     margin-bottom:25px;
 }
 
 .checkbox-group label{
-    display:flex;
-    align-items:center;
-    gap:10px;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:6px !important;
+    width:auto !important;
+    padding:8px 0 !important;
+    margin:0 !important;
     font-weight:normal;
+transition: background 0.2s ease;
 }
-
+.checkbox-group label:hover{
+    background:#f3f9f3;
+}
+.checkbox-group label:active{
+    background:#e8f5e9;
+}
+.checkbox-group input[type="checkbox"]{
+    width:auto !important;
+    height:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    flex:none !important;
+}
+.checkbox-group input[type="checkbox"]{
+    transform: scale(1.3);
+    margin-right: 8px;
+    cursor: pointer;
+}
 .navigation{
     display:flex;
     justify-content:space-between;

@@ -1,29 +1,23 @@
 footer = """
 <div class="navigation">
 
-<button
-type="button"
-id="previousBtn">
+    <button
+    type="button"
+    id="prevBtn">
+        Previous
+    </button>
 
-Previous
+    <button
+    type="button"
+    id="nextBtn">
+        Next
+    </button>
 
-</button>
-
-<button
-type="button"
-id="nextBtn">
-
-Next
-
-</button>
-
-<button
-type="submit"
-id="submitBtn">
-
-Submit FMD Report
-
-</button>
+    <button
+    type="submit"
+    id="submitBtn">
+        Submit FMD Report
+    </button>
 
 </div>
 
@@ -31,11 +25,8 @@ Submit FMD Report
 
 </div>
 
-<script src="../data/nigeria-lgas.js"></script>
-
 <script src="../js/fmd-report.js"></script>
 
 </body>
-
 </html>
 """
