@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 # ===============================
 # Import BioGuard Templates
@@ -14,6 +15,17 @@ from templates.review import review
 from templates.footer import footer
 from styles.fmd_css import css
 from scripts.fmd_js import js
+from scripts.nigeria_locations_data import nigeria_locations
+# ===============================
+# Generate BioGuard Reference Data
+# ===============================
+
+reference_data_js = """
+const referenceData = {
+    "locations": 
+""" + json.dumps(nigeria_locations, indent=4) + """
+};
+"""
 # ===============================
 # BioGuard Builder
 # ===============================
@@ -55,6 +67,13 @@ css_file = css_dir / "fmd-report.css"
 # Write CSS
 css_file.write_text(css, encoding="utf-8")
 # Output JS file
+# Output Reference Data JS
+reference_file = js_dir / "bioguard-reference-data.js"
+
+reference_file.write_text(
+    reference_data_js,
+    encoding="utf-8"
+)
 js_file = js_dir / "fmd-report.js"
 
 # Write JS

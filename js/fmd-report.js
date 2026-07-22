@@ -17,6 +17,73 @@ if(reportDate){
 if(reportTime){
     reportTime.value = now.toTimeString().slice(0,5);
 }
+// =========================
+// Load Nigerian States
+// =========================
+
+const state = document.getElementById("state");
+
+const nigeriaStates =
+referenceData.locations.states;
+
+
+if(state){
+
+    nigeriaStates.forEach(s => {
+
+        const option = document.createElement("option");
+
+        option.value = s;
+
+        option.textContent = s;
+
+        state.appendChild(option);
+
+    });
+
+}
+// =========================
+// Populate LGAs
+// =========================
+
+const lga =
+document.getElementById("lga");
+
+if(state && lga){
+
+    state.addEventListener("change",()=>{
+
+        lga.innerHTML =
+        '<option value="">Select LGA</option>';
+
+        const selectedState =
+        state.value;
+
+        if(!selectedState){
+
+            return;
+
+        }
+
+        const lgas =
+        referenceData.locations.lgas[selectedState] || [];
+
+        lgas.forEach(name=>{
+
+            const option =
+            document.createElement("option");
+
+            option.value = name;
+
+            option.textContent = name;
+
+            lga.appendChild(option);
+
+        });
+
+    });
+
+}
     console.log("Project BioGuard FMD Wizard Loaded");
 
     const steps = document.querySelectorAll(".form-step");
@@ -64,9 +131,34 @@ if(reportTime){
   return;
 
         }
+    }
+// Step 2 Validation - Farm Information
+if(current === 1){
+
+    const farmName = document.getElementById("farmName");
+    const farmOwner = document.getElementById("farmOwner");
+    const state = document.getElementById("state");
+    if(!farmName.value.trim()){
+
+        alert("Please enter the Farm Name.");
+        return;
 
     }
 
+    if(!farmOwner.value.trim()){
+
+        alert("Please enter the Farm Owner / Manager.");
+        return;
+
+    }
+if(!state.value){
+
+    alert("Please select the State.");
+
+    return;
+
+}
+}
 
     if(current<steps.length-1){
 

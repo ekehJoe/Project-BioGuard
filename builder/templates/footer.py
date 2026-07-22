@@ -25,6 +25,7 @@ footer = """
 
 </div>
 
+<script src="../js/bioguard-reference-data.js"></script>
 <script src="../js/fmd-report.js"></script>
 
 </body>
