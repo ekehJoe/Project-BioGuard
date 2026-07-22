@@ -294,6 +294,45 @@ if(Number(animalsDead.value) > Number(animalsAtRisk.value)){
 }
   }
 
+// Step 4 Validation - Clinical Signs
+if(current === 3){
+
+    const signs = [
+
+        document.getElementById("fever"),
+        document.getElementById("salivation"),
+        document.getElementById("mouthLesions"),
+        document.getElementById("footLesions"),
+        document.getElementById("teatLesions"),
+        document.getElementById("lameness"),
+        document.getElementById("lossAppetite"),
+        document.getElementById("reducedMilk")
+
+    ];
+
+    const hasClinicalSign = signs.some(sign => sign.checked);
+
+    if(!hasClinicalSign){
+
+        alert("Please select at least one clinical sign.");
+
+        return;
+
+    }
+    const mouthSeverity =
+        document.getElementById("mouthSeverity");
+
+    if(
+        document.getElementById("mouthLesions").checked &&
+        !mouthSeverity.value
+    ){
+
+        alert("Please select the Mouth Lesion Severity.");
+
+        return;
+
+    }
+}
     if(current<steps.length-1){
 
         current++;
