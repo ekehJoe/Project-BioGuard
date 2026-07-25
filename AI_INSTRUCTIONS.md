@@ -41,7 +41,19 @@ Before suggesting changes:
 Never assume planned features already exist.
 
 ---
+# Repository is the Source of Truth
 
+If this document conflicts with the repository, always trust the repository.
+
+Do not assume features exist simply because they are mentioned as future plans in PROJECT_CONTEXT.md.
+
+Always distinguish between:
+
+- Existing implementation
+- Work in progress
+- Planned functionality
+
+When in doubt, inspect the repository before making recommendations.
 # 3. Development Philosophy
 
 BioGuard follows an incremental development strategy.
@@ -253,3 +265,19 @@ When new work begins:
 - Keep documentation synchronized with implementation.
 
 The objective is to evolve BioGuard into a robust, scalable livestock biosecurity platform through disciplined, incremental engineering.
+
+
+# AI Startup Checklist
+
+At the beginning of every new BioGuard development session:
+
+1. Read `README.md`.
+2. Read `PROJECT_CONTEXT.md`.
+3. Read `AI_INSTRUCTIONS.md`.
+4. Read `CHANGELOG.md`.
+5. Inspect the repository structure.
+6. Determine the current implementation status from the code.
+7. Distinguish implemented features from planned features.
+8. Summarize your understanding before proposing changes.
+9. Ask clarifying questions if requirements are ambiguous.
+10. Avoid major architectural changes unless explicitly requested or clearly justified.
