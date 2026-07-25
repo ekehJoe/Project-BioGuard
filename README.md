@@ -20,7 +20,7 @@ The current version focuses on **Foot-and-Mouth Disease (FMD)** as the first dis
 
 - Responsive landing page
 - Dashboard
-- Multi-step FMD Reporting Wizard
+- Multi-step FMD Reporting Module
 - Mobile-first user interface
 - Client-side form validation
 
@@ -52,6 +52,23 @@ The current version focuses on **Foot-and-Mouth Disease (FMD)** as the first dis
 - HTML5
 - CSS3
 - Vanilla JavaScript
+
+  ## Project Structure
+
+```
+/
+├── assets/
+├── builder/
+├── css/
+├── data/
+├── js/
+├── pages/
+├── index.html
+├── README.md
+├── PROJECT_CONTEXT.md
+├── AI_INSTRUCTIONS.md
+└── CHANGELOG.md
+```
 
 ### Automation (In Progress)
 - n8n
