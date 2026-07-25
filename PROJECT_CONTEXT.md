@@ -1,176 +1,67 @@
 # PROJECT_CONTEXT.md
 
 # Project BioGuard
-### AI-Powered Livestock Biosecurity Tracking & Outbreak Intelligence Platform
 
-**Project Status:** Active Development
+**Version:** v0.1.0
+
+**Status:** Active Development
 
 **Project Owner:** @SainTjoe
 
-**Primary AI Engineering Assistant:** Claude AI
+---
 
-**Secondary AI Consultant:** ChatGPT
+# 1. Project Overview
+
+BioGuard is an AI-powered livestock biosecurity platform currently under development.
+
+The first implementation focuses on **Foot-and-Mouth Disease (FMD)** reporting through a mobile-first web application.
+
+The long-term vision is to expand BioGuard into a comprehensive livestock disease surveillance platform capable of supporting multiple diseases, AI-assisted outbreak assessment, workflow automation, and decision support for veterinarians and livestock stakeholders.
+
+At the current stage, the project consists primarily of a frontend application, with backend automation and AI capabilities under active development.
 
 ---
 
-# 1. Executive Summary
+# 2. Project Objectives
 
-Project BioGuard is an AI-powered livestock biosecurity platform designed to modernize livestock disease surveillance, reporting, outbreak detection, and response.
+The objectives of BioGuard are to:
 
-The objective is to replace fragmented and manual disease reporting processes with an intelligent system capable of collecting field reports, analyzing disease risk using AI, orchestrating automated workflows, notifying stakeholders, and supporting evidence-based outbreak management.
-
-The project is intentionally being developed using lightweight technologies that can be built and maintained from an Android device, proving that enterprise-grade automation can be created without expensive infrastructure.
-
-BioGuard is also the capstone project for an AI Automation learning journey and is intended to demonstrate production-level software engineering, AI orchestration, and workflow automation skills.
-
----
-
-# 2. Project Vision
-
-To become an intelligent livestock biosecurity platform capable of:
-
-- Early disease detection
-- AI-assisted outbreak assessment
-- Automated emergency response
-- Regional surveillance
-- Government and veterinary reporting
-- Farm risk scoring
-- Supply-chain protection
-
-The long-term goal is to evolve BioGuard into a scalable platform that can support livestock industries across multiple countries.
-
----
-
-# 3. Problem Statement
-
-Livestock disease reporting in many regions suffers from:
-
-- Delayed reporting
-- Manual paperwork
-- Poor communication
-- Lack of centralized records
-- Slow outbreak response
-- Limited access to veterinary intelligence
-
-BioGuard addresses these issues through automation and artificial intelligence.
-
----
-
-# 4. Core Objectives
-
-The project aims to:
-
-- Digitize disease reporting.
+- Digitize livestock disease reporting.
 - Standardize field data collection.
-- Automate report processing.
-- Integrate AI into disease assessment.
-- Reduce response time.
-- Support veterinary decision-making.
-- Build a scalable outbreak intelligence system.
+- Reduce delays in disease reporting.
+- Support AI-assisted disease assessment.
+- Automate reporting workflows.
+- Improve outbreak response.
+- Build a scalable biosecurity platform.
 
 ---
 
-# 5. Development Philosophy
+# 3. Current Scope
 
-This project follows several engineering principles.
+The current version of BioGuard is limited to **Foot-and-Mouth Disease (FMD)**.
 
-## Simplicity
+Current capabilities include:
 
-Prefer straightforward solutions over unnecessary complexity.
+- Mobile-first interface
+- Landing page
+- Dashboard
+- Multi-step FMD reporting wizard
+- Client-side form validation
 
-## Incremental Development
+The current application does **not yet** include:
 
-Features are added gradually and tested individually.
+- Database storage
+- Authentication
+- AI analysis
+- Automated notifications
+- Disease prediction
+- Multi-disease support
 
-## AI-Assisted Engineering
-
-AI is used to accelerate development while maintaining human oversight.
-
-## Mobile-First Development
-
-The project is primarily developed using an Android phone with Termux and code-server.
-
-## Automation First
-
-Where possible, workflows should be automated rather than handled manually.
-
----
-
-# 6. Development Timeline
-
-## Phase 1
-
-Project conception.
-
-Initial planning.
-
-Research into livestock biosecurity.
+These capabilities are planned for future releases.
 
 ---
 
-## Phase 2
-
-Frontend prototype.
-
-HTML
-
-CSS
-
-JavaScript
-
----
-
-## Phase 3
-
-Multi-step disease reporting wizard.
-
-Navigation.
-
-Validation.
-
-Progress tracking.
-
----
-
-## Phase 4
-
-n8n integration planning.
-
-Webhook architecture.
-
-Cloudflare Tunnel.
-
-JSON payload design.
-
----
-
-## Phase 5
-
-AI integration planning.
-
-Disease analysis.
-
-Automation workflows.
-
-Notification system.
-
----
-
-## Phase 6 (Current)
-
-System integration.
-
-Webhook communication.
-
-Testing.
-
-Bug fixing.
-
-Repository organization.
-
----
-
-# 7. Current Technology Stack
+# 4. Technology Stack
 
 ## Frontend
 
@@ -178,13 +69,9 @@ Repository organization.
 - CSS3
 - Vanilla JavaScript
 
----
+## Workflow Automation
 
-## Automation
-
-- n8n
-
----
+- n8n (integration in progress)
 
 ## AI
 
@@ -193,38 +80,31 @@ Planned:
 - OpenAI
 - Google Gemini
 
----
-
 ## Backend
 
-Current:
+Planned:
 
-Webhook-based architecture.
-
-Future:
-
-Supabase / PostgreSQL
+- Supabase / PostgreSQL
 
 ---
 
-## Development Environment
+# 5. Development Environment
 
-Primary device:
-
-Android smartphone.
-
-Development tools:
+Development is performed primarily on an Android phone using:
 
 - Termux
 - Ubuntu (proot-distro)
 - code-server
 - Git
 - GitHub
-- Cloudflared
+
+This project intentionally demonstrates that meaningful software engineering and AI automation can be developed using lightweight hardware and open-source tools.
 
 ---
 
-# 8. High-Level Architecture
+# 6. Current Architecture
+
+Current architecture:
 
 ```
 User
@@ -235,7 +115,25 @@ BioGuard Frontend
 
 ↓
 
-JSON Payload
+Form Validation
+
+↓
+
+JSON Payload (planned submission)
+
+↓
+
+n8n Webhook (integration in progress)
+```
+
+Future architecture:
+
+```
+User
+
+↓
+
+BioGuard Frontend
 
 ↓
 
@@ -243,15 +141,11 @@ n8n Webhook
 
 ↓
 
-Validation
+Workflow Validation
 
 ↓
 
-AI Analysis
-
-↓
-
-Decision Engine
+AI Disease Analysis
 
 ↓
 
@@ -268,211 +162,140 @@ Reporting Dashboard
 
 ---
 
-# 9. Current Features
+# 7. Current Development Status
 
-Completed:
+## Completed
 
-✔ Responsive frontend
-
-✔ Multi-step reporting wizard
-
-✔ Navigation controls
-
-✔ Form validation
-
-✔ Modular JavaScript
-
-✔ Cloudflare Tunnel setup
-
-✔ n8n deployment
-
-✔ GitHub repository
-
-✔ Project documentation
-
----
-
-# 10. Features Under Development
-
-- Reliable webhook submission
-- AI disease analysis
-- Risk classification
-- Database storage
+- Repository created
+- Frontend structure established
+- Landing page
 - Dashboard
-- Analytics
-- Notification workflows
+- Multi-step FMD reporting wizard
+- Client-side validation
+- GitHub version control
 
 ---
 
-# 11. Planned Future Features
+## In Progress
 
-- Authentication
-- User accounts
-- Farm management
-- GPS integration
-- Offline reporting
-- Image upload
-- AI image analysis
-- Vaccination management
-- Quarantine recommendations
-- Veterinary scheduling
-- Interactive dashboards
-- Predictive outbreak modeling
-- Mobile application
-- Public health reporting
-- Regional analytics
-- National disease surveillance
-
----
-
-# 12. Design Principles
-
-Maintain:
-
-- Modular code
-- Readable functions
-- Clear naming
-- Reusable components
-- Separation of concerns
-
-Avoid:
-
-- Monolithic files
-- Duplicate code
-- Hidden logic
-- Hardcoded configuration
-
----
-
-# 13. Coding Standards
-
-- Prefer descriptive names.
-- Document important logic.
-- Keep functions focused.
-- Validate inputs.
-- Handle errors gracefully.
-- Maintain consistent formatting.
-
----
-
-# 14. Current Repository Structure
-
-The repository is organized around a lightweight frontend with supporting JavaScript modules and documentation.
-
-Future directories may include backend services, database schemas, AI prompt libraries, testing, and deployment automation as the platform grows.
-
----
-
-# 15. AI Integration Strategy
-
-Artificial intelligence will be used for:
-
-- Disease classification
-- Outbreak risk scoring
-- Recommendation generation
-- Report summarization
-- Decision support
-- Pattern recognition
-
-AI should assist human experts rather than replace them.
-
----
-
-# 16. Current Challenges
-
-Current engineering priorities include:
-
-- Stable webhook communication
+- Webhook integration
+- JSON payload submission
 - End-to-end testing
-- Robust error handling
-- Workflow reliability
-- Improved validation
-- Scalable architecture
+- AI workflow planning
 
 ---
 
-# 17. Engineering Constraints
+## Planned
 
-This project is intentionally developed on limited hardware.
-
-Development primarily occurs on:
-
-- Android phone
-- Termux
-- Ubuntu container
-- code-server
-
-Solutions should remain lightweight and avoid unnecessary dependencies whenever practical.
+- AI disease assessment
+- Database integration
+- Authentication
+- Notifications
+- Dashboard analytics
+- Multi-disease support
 
 ---
 
-# 18. Roadmap
+# 8. Design Principles
 
-## Short-Term
+The project follows these principles:
 
-Complete webhook integration.
-
-Connect frontend to n8n.
-
-Validate payloads.
-
-Improve reliability.
-
----
-
-## Medium-Term
-
-Integrate AI analysis.
-
-Connect database.
-
-Build dashboards.
-
-Improve reporting.
+- Keep the architecture modular.
+- Prefer readable code over clever code.
+- Avoid unnecessary dependencies.
+- Build features incrementally.
+- Test before expanding functionality.
+- Document major engineering decisions.
 
 ---
 
-## Long-Term
+# 9. Repository Organization
 
-Scale BioGuard into a production-ready livestock biosecurity platform supporting multiple diseases, regions, and users with advanced AI-powered analytics.
+The repository currently contains:
 
----
+- Frontend pages
+- JavaScript modules
+- Styling
+- Documentation
 
-# 19. AI Assistant Guidelines
-
-If you are an AI assistant contributing to this project:
-
-1. Read this entire document before making recommendations.
-2. Understand the repository before suggesting changes.
-3. Preserve the existing architecture unless there is a compelling engineering reason to change it.
-4. Explain major architectural recommendations before implementing them.
-5. Prefer incremental improvements over complete rewrites.
-6. Maintain compatibility with existing workflows whenever possible.
-7. Keep the code modular and well documented.
-8. If requirements are unclear, ask questions before making assumptions.
-9. Prioritize maintainability, readability, and scalability.
-10. When proposing new features, explain the trade-offs, dependencies, and implementation steps.
+As the project evolves, additional directories for backend services, testing, APIs, and documentation may be introduced.
 
 ---
 
-# 20. Definition of Success
+# 10. Current Engineering Priorities
 
-BioGuard will be considered successful when it can:
+Current development priorities are:
 
-- Collect disease reports reliably.
-- Analyze outbreak risk with AI.
-- Trigger automated workflows.
-- Store structured records.
-- Notify stakeholders automatically.
-- Support scalable livestock disease surveillance.
-- Serve as a production-quality demonstration of AI automation and software engineering.
+1. Complete frontend functionality.
+2. Connect the frontend to n8n.
+3. Validate JSON payloads.
+4. Test webhook communication.
+5. Improve reliability.
+6. Prepare AI integration.
+
+New features should not compromise the stability of existing functionality.
 
 ---
 
-# 21. Living Document
+# 11. Long-Term Vision
 
-This document is intended to evolve alongside the project.
+Future versions of BioGuard are expected to support:
 
-Whenever significant architectural decisions, milestones, technologies, or workflows change, this file should be updated to reflect the current state of Project BioGuard.
+- Multiple livestock diseases
+- AI-assisted diagnosis support
+- Outbreak risk scoring
+- Farm management
+- Veterinary dashboards
+- Image uploads
+- GIS/GPS integration
+- Predictive analytics
+- National disease surveillance
+- Decision support for veterinary authorities
 
-It serves as the primary knowledge base for developers, collaborators, and AI assistants working on the project.
+These features are aspirational and are **not part of the current implementation**.
+
+---
+
+# 12. Guidance for AI Assistants
+
+If you are assisting with this project:
+
+1. Read this document before analyzing the codebase.
+2. Treat the repository as the authoritative source for implemented functionality.
+3. Distinguish between:
+   - completed features,
+   - work in progress,
+   - planned features.
+4. Do not assume planned features already exist.
+5. Before proposing architectural changes, understand the current implementation.
+6. Prefer incremental improvements over large rewrites.
+7. Preserve working functionality unless there is a clear technical justification for change.
+8. Explain significant design recommendations before implementing them.
+9. If requirements are unclear, ask questions rather than making assumptions.
+10. Keep solutions compatible with the project's lightweight development environment whenever practical.
+
+---
+
+# 13. Definition of Success
+
+The immediate milestone for BioGuard is:
+
+- A fully functional FMD reporting application capable of sending validated reports to an n8n workflow.
+
+The long-term success of BioGuard is:
+
+- A scalable AI-powered livestock biosecurity platform that supports disease reporting, intelligent analysis, workflow automation, and decision support across multiple livestock diseases.
+
+---
+
+# 14. Living Document
+
+This document should be updated whenever:
+
+- major features are completed,
+- architecture changes,
+- technologies change,
+- project priorities change,
+- significant engineering decisions are made.
+
+It is intended to remain the primary context document for developers and AI assistants working on Project BioGuard.
