@@ -1,1 +1,79 @@
-
+{
+  "name": "Group 4 BIOGUARD PROJECT",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "httpMethod": [
+          "POST"
+        ],
+        "path": "bioguard-fmd",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "binaryPropertyName": "",
+          "ignoreBots": false,
+          "ipWhitelist": "",
+          "rawBody": false,
+          "responseHeaders": {
+            "entries": [
+              {}
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -160,
+        -256
+      ],
+      "id": "68f6cfde-d4d9-416b-b003-46f629bd06d7",
+      "name": "Webhook",
+      "webhookId": "8b0cab20-1a2c-46eb-a760-f5fe7eaf64c0"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": true,\n  \"message\": \"BioGuard report received successfully.\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        16,
+        -256
+      ],
+      "id": "3d25f759-d28c-4a8e-bec2-6c64099bb15a",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "02bc3d0d-559b-47a8-900b-206bff2d89cd",
+  "meta": {
+    "instanceId": "a40e0f1a549a8c83d703bd4c5b33bce41586389210d6d6dec289a9eae39b2f59"
+  },
+  "id": "9ibctdjf6ItNGEw5",
+  "tags": []
+}
