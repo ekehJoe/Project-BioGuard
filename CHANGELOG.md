@@ -20,9 +20,14 @@ This marks the initial public development milestone for Project BioGuard.
 - Established the initial project structure.
 - Implemented the landing page.
 - Implemented the dashboard interface.
-- Developed the multi-step Foot-and-Mouth Disease (FMD) Reporting Wizard.
+- Developed the multi-step Foot-and-Mouth Disease (FMD) Reporting Module.
 - Implemented client-side form validation.
-- Organized frontend assets into HTML, CSS, and JavaScript components.
+- Created the `assets/` directory.
+- Created the `builder/` directory.
+- Created the `css/` directory.
+- Created the `data/` directory.
+- Created the `js/` directory.
+- Created the `pages/` directory.
 - Added project documentation:
   - README.md
   - PROJECT_CONTEXT.md
