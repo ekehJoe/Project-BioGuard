@@ -1,96 +1,86 @@
-# CHANGELOG.md
-
 # Changelog
 
 All notable changes to Project BioGuard will be documented in this file.
 
-The format follows the principles of semantic versioning and chronological project history.
+The format is based on semantic versioning.
 
 ---
 
-## [v0.1.0] - 2026-07-25
-
-### Project Initialization
-
-This marks the initial public development milestone for Project BioGuard.
+## v0.6.0 - Production Dashboard & Webhook Integration
+Release Date: 2026-07-27
 
 ### Added
+- Production landing page with Launch BioGuard workflow.
+- New production dashboard with modular navigation.
+- AI Assistant, Analytics, Farm Map, Livestock Registry, and Settings pages.
+- Secure configuration template (`js/config.example.js`).
 
-- Created GitHub repository.
-- Established the initial project structure.
-- Implemented the landing page.
-- Implemented the dashboard interface.
-- Developed the multi-step Foot-and-Mouth Disease (FMD) Reporting Module.
-- Implemented client-side form validation.
-- Created the `assets/` directory.
-- Created the `builder/` directory.
-- Created the `css/` directory.
-- Created the `data/` directory.
-- Created the `js/` directory.
-- Created the `pages/` directory.
-- Added project documentation:
-  - README.md
-  - PROJECT_CONTEXT.md
-  - AI_INSTRUCTIONS.md
-  - CHANGELOG.md
+### Improved
+- Production dashboard promoted as the official dashboard.
+- Cleaner project structure and navigation.
+- Repository cleanup and improved `.gitignore`.
+- Removed obsolete backup and Python cache files from version control.
 
-### Development Environment
+### Implemented
+- End-to-end FMD reporting wizard.
+- JSON payload generation.
+- Successful n8n webhook integration.
+- Production Git workflow with pull request merge into `main`.
 
-- Established Android-based development workflow.
-- Configured Termux development environment.
-- Configured Ubuntu (proot-distro).
-- Configured code-server for browser-based development.
-- Initialized Git version control.
-
-### Integration Progress
-
-Work has begun on:
-
-- n8n workflow integration
-- JSON payload submission
-- Webhook communication
-
-These features are currently under development and are not yet considered complete.
+### Fixed
+- Dashboard navigation and landing page routing.
+- Repository organization and version control hygiene.
 
 ---
 
-## Upcoming Milestones
+## v0.5.1 - Stable FMD Reporting Workflow
 
-The following items are planned and will be moved into future release sections once completed.
-
-- Complete webhook integration.
-- Complete end-to-end report submission.
-- Integrate AI-assisted disease analysis.
-- Connect persistent database.
-- Add authentication.
-- Expand support beyond Foot-and-Mouth Disease (FMD).
-- Implement analytics dashboard.
-- Implement notification workflows.
+### Improved
+- Epidemiology module validation.
+- Stable FMD reporting workflow.
 
 ---
 
-## Versioning Policy
+## v0.5.0
 
-Project BioGuard follows semantic versioning.
-
-Version format:
-
-MAJOR.MINOR.PATCH
-
-Examples:
-
-- v0.1.0 — Initial development milestone
-- v0.2.0 — Major feature additions
-- v1.0.0 — First production-ready release
+### Added
+- Epidemiology module.
+- Validation improvements.
 
 ---
 
-## Maintenance
+## v0.4.0
 
-Whenever a feature is completed, fixed, removed, or significantly changed:
+### Added
+- Clinical signs module.
 
-1. Update the version number.
-2. Add the date of the release.
-3. Record only completed work.
-4. Do not record planned work as completed.
-5. Keep entries chronological, with the newest release at the top.
+---
+
+## v0.3.1
+
+### Improved
+- Builder workflow.
+
+---
+
+## v0.3.0
+
+### Added
+- Builder enhancements.
+
+---
+
+## v0.2.0 - FMD Builder System
+
+### Added
+- Python builder architecture.
+- HTML template generation.
+- CSS generation.
+- JavaScript generation.
+
+---
+
+## v0.1.0
+
+### Initial Release
+- Initial Project BioGuard repository.
