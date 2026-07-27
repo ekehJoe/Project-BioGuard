@@ -397,18 +397,183 @@ if(current === 4){
 
 });
 
-    prevBtn.addEventListener("click",()=>{
+prevBtn.addEventListener("click",()=>{
 
         if(current>0){
 
-            current--;
+                current--;
 
-            showStep(current);
+                        showStep(current);
 
+                            }
+
+                            });
+
+                            showStep(current);
+
+
+function buildPayload() {
+    return {
+        reporter: {
+            vetId: document.getElementById("vetId").value,
+            reportDate: document.getElementById("reportDate").value,
+            reportTime: document.getElementById("reportTime").value
+        },
+
+        farm: {
+            farmName: document.getElementById("farmName").value,
+            farmOwner: document.getElementById("farmOwner").value,
+            state: document.getElementById("state").value,
+            lga: document.getElementById("lga").value,
+            community: document.getElementById("community").value,
+            gpsLatitude: document.getElementById("gpsLatitude").value,
+            gpsLongitude: document.getElementById("gpsLongitude").value
+        },
+
+        animals: {
+            species: document.getElementById("species").value,
+            breed: document.getElementById("breed").value,
+            ageGroup: document.getElementById("ageGroup").value,
+            animalsAtRisk: Number(document.getElementById("animalsAtRisk").value || 0),
+            animalsSick: Number(document.getElementById("animalsSick").value || 0),
+            animalsDead: Number(document.getElementById("animalsDead").value || 0)
+        },
+
+        clinical: {
+            fever: document.getElementById("fever").checked,
+            salivation: document.getElementById("salivation").checked,
+            mouthLesions: document.getElementById("mouthLesions").checked,
+            footLesions: document.getElementById("footLesions").checked,
+            teatLesions: document.getElementById("teatLesions").checked,
+            lameness: document.getElementById("lameness").checked,
+            lossAppetite: document.getElementById("lossAppetite").checked,
+            reducedMilk: document.getElementById("reducedMilk").checked,
+            mouthSeverity: document.getElementById("mouthSeverity").value
+        },
+
+        epidemiology: {
+            animalMovement: document.getElementById("animalMovement").value,
+            contactHerds: document.getElementById("contactHerds").value,
+            newAnimals: document.getElementById("newAnimals").value,
+            vaccinated: document.getElementById("vaccinated").value,
+            nearbyCases: document.getElementById("nearbyCases").value
+        },
+
+        additionalContext: {
+            notes: document.getElementById("additionalContext").value
+        }
+    };
+}
+                            // =========================
+                            // Submit FMD Report
+                            // =========================
+
+function showSubmitStatus(message, type) {
+    const status = document.getElementById("submitStatus");
+
+    status.textContent = message;
+    status.className = "submit-status " + type;
+}
+
+function resetWizard() {
+
+    // Clear text inputs
+    document.querySelectorAll("input").forEach(input => {
+
+        if(input.type !== "checkbox"){
+            input.value = "";
         }
 
     });
 
+
+    // Clear textarea
+    document.querySelectorAll("textarea").forEach(textarea => {
+        textarea.value = "";
+    });
+
+
+    // Reset dropdowns
+    document.querySelectorAll("select").forEach(select => {
+        select.selectedIndex = 0;
+    });
+
+
+    // Uncheck clinical signs
+    document.querySelectorAll('input[type="checkbox"]').forEach(box => {
+        box.checked = false;
+    });
+
+
+    // Restore report date and time
+    const now = new Date();
+
+    document.getElementById("reportDate").value =
+        now.toISOString().split("T")[0];
+
+    document.getElementById("reportTime").value =
+        now.toTimeString().slice(0, 5);
+
+
+    // Return to first wizard step
+    current = 0;
     showStep(current);
+
+}
+
+submitBtn.addEventListener("click", async (e)=>{
+
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    showSubmitStatus(
+        "Submitting BioGuard report...",
+        "loading"
+    );
+
+    const payload = buildPayload();
+
+try {
+
+    const response = await fetch(CONFIG.WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+    throw new Error("Server returned an error");
+}
+    const result = await response.json();
+
+   showSubmitStatus(
+    result.message || "BioGuard report submitted successfully.",
+    "success"
+);
+
+resetWizard();
+
+submitBtn.disabled = false;
+submitBtn.textContent = "Submit FMD Report";
+
+} catch (error) {
+
+    console.error(error);
+
+    showSubmitStatus(
+    error.message,
+    "error"
+);
+
+alert(error.message);
+submitBtn.disabled = false;
+submitBtn.textContent = "Submit FMD Report";
+}
+
+});
 
 });
