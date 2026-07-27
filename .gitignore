@@ -18,3 +18,7 @@ node_modules/
 # Environment secrets
 .env
 js/config.js
+
+# Python cache
+__pycache__/
+*.pyc
