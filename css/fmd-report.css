@@ -188,3 +188,35 @@ transition: background 0.2s ease;
 }
 
 }
+
+
+.submit-status {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.submit-status.success {
+    display: block;
+    background-color: #2e7d32;
+    color: #ffffff;
+    border: 2px solid #1b5e20;
+}
+
+.submit-status.error {
+    display: block;
+    background-color: #c62828;
+    color: #ffffff;
+    border: 2px solid #8e0000;
+}
+
+.submit-status.loading {
+    display: block;
+    background-color: #1565c0;
+    color: #ffffff;
+    border: 2px solid #0d47a1;
+}

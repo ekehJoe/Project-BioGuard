@@ -1,5 +1,24 @@
+# Temporary backups
+*.backup
+*.bak
+
+# Editor files
 .vscode/
-node_modules/
-*.log
+.idea/
+
+# OS files
 .DS_Store
-Thumbs.db
+
+# Logs
+*.log
+
+# Node dependencies
+node_modules/
+
+# Environment secrets
+.env
+js/config.js
+
+# Python cache
+__pycache__/
+*.pyc

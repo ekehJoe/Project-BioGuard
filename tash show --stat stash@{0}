@@ -1,0 +1,22 @@
+ .../scripts/__pycache__/__init__.cpython-313.pyc   | Bin [31m153[m -> [32m0[m bytes
+ builder/scripts/__pycache__/fmd_js.cpython-313.pyc | Bin [31m7965[m -> [32m0[m bytes
+ .../nigeria_locations_data.cpython-313.pyc         | Bin [31m9062[m -> [32m0[m bytes
+ .../__pycache__/nigeria_states.cpython-313.pyc     | Bin [31m479[m -> [32m0[m bytes
+ .../__pycache__/reference_data_js.cpython-313.pyc  | Bin [31m1802[m -> [32m0[m bytes
+ .../styles/__pycache__/__init__.cpython-313.pyc    | Bin [31m152[m -> [32m0[m bytes
+ builder/styles/__pycache__/fmd_css.cpython-313.pyc | Bin [31m3183[m -> [32m0[m bytes
+ .../templates/__pycache__/__init__.cpython-313.pyc | Bin [31m155[m -> [32m0[m bytes
+ .../templates/__pycache__/animal.cpython-313.pyc   | Bin [31m1447[m -> [32m0[m bytes
+ .../templates/__pycache__/clinical.cpython-313.pyc | Bin [31m1192[m -> [32m0[m bytes
+ .../__pycache__/epidemiology.cpython-313.pyc       | Bin [31m1343[m -> [32m0[m bytes
+ builder/templates/__pycache__/farm.cpython-313.pyc | Bin [31m1308[m -> [32m0[m bytes
+ .../templates/__pycache__/footer.cpython-313.pyc   | Bin [31m591[m -> [32m0[m bytes
+ .../templates/__pycache__/header.cpython-313.pyc   | Bin [31m767[m -> [32m0[m bytes
+ .../templates/__pycache__/reporter.cpython-313.pyc | Bin [31m733[m -> [32m0[m bytes
+ .../templates/__pycache__/review.cpython-313.pyc   | Bin [31m592[m -> [32m0[m bytes
+ css/dashboard.css                                  |  42 [32m++++++++++[m[31m-----------[m
+ index.html                                         |   2 [32m+[m[31m-[m
+ js/dashboard.js                                    |  31 [32m+++++++++++++++[m
+ js/script.js                                       |   8 [32m+[m[31m---[m
+ pages/dashboard.html                               |  26 [32m+++++[m[31m--------[m
+ 21 files changed, 63 insertions(+), 46 deletions(-)
